@@ -45,15 +45,25 @@ REACT_APP_API_URL=http://localhost:8000
 npm start
 🛠️ Tech Stack
 Frontend
+
 React.js
+
 Material UI
+
 Axios
+
 React Router
+
 Backend
+
 Node.js
+
 Express.js
+
 MongoDB
-Redis (optional)
+
+Redis
+
 Mongoose
 # 📚 API Documentation
 FAQ Endpoints
