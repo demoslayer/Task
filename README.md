@@ -81,24 +81,59 @@ javascript
 
 #
 ├── frontend/
+
+
 │   ├── src/
+
+
 │   │   ├── components/
+
+
 │   │   │   └── FAQForm.js
+
+
 │   │   └── App.js
+
+
 │   ├── Dockerfile
+
+
 │   └── package.json
+
+
 │
+
+
 ├── backend/
+
+
 │   ├── routes/
+
+
 │   │   └── faqRoutes.js
+
+
 │   ├── models/
+
+
 │   │   └── FAQ.js
+
+
 │   ├── app.js
+
+
 │   ├── Dockerfile
+
+
 │   └── package.json
+
+
 │
+
+
 └── docker-compose.yml
-#
+
+
 # ⚡ Features
 Create and manage FAQs
 Real-time form validation
