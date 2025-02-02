@@ -1,26 +1,4 @@
 
-// const mongoose = require('mongoose');
-
-// const faqSchema = new mongoose.Schema({
-//     question: {
-//         en: { type: String, required: true },
-//         hi: { type: String },
-//         bn: { type: String }
-//     },
-//     answer: {
-//         en: { type: String, required: true },
-//         hi: { type: String },
-//         bn: { type: String }
-//     },
-//     isActive: {
-//         type: Boolean,
-//         default: true
-//     }
-// }, { timestamps: true });
-
-// module.exports = mongoose.model('FAQ', faqSchema);
-
-
 
 const mongoose = require('mongoose');
 
