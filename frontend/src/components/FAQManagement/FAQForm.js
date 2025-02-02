@@ -1,6 +1,5 @@
 
 
-
 import React, { useState } from 'react';
 import {
   Dialog,
@@ -15,7 +14,11 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 
-const FAQForm = ({ open, onClose, refreshFAQs }) => {
+// const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://backend-hazel-mu.vercel.app'
+
+
+const FAQForm = ({ open, onClose, refreshFAQs, baseUrl }) => {
   const [formData, setFormData] = useState({
     question: '',
     answer: ''
@@ -27,9 +30,14 @@ const FAQForm = ({ open, onClose, refreshFAQs }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:8000/api/faqs', {
+      await axios.post(`${BASE_URL}/api/faqs`, {
         question: formData.question,
         answer: formData.answer
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
       });
       
       setFormData({ question: '', answer: '' });
@@ -86,3 +94,4 @@ const FAQForm = ({ open, onClose, refreshFAQs }) => {
 };
 
 export default FAQForm;
+
