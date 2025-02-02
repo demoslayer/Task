@@ -56,33 +56,56 @@ exports.createFAQ = async (req, res) => {
     }
 };
 
+
 exports.getFAQ = async (req, res) => {
-        try {
-            const { lang = 'en' } = req.query;
-            const faqs = await FAQ.find({ isActive: true });
-    
-            
-            const languageToUse = ['en', 'hi', 'bn','te','ta','sa','pa','mr','kn'].includes(lang) ? lang : 'en';
-    
-            const translatedFaqs = faqs.map(faq => ({
-                id: faq._id,
-                question: faq.question[languageToUse],
-                answer: faq.answer[languageToUse],
-                createdAt: faq.createdAt,
-                updatedAt: faq.updatedAt
-            }));
-    
-            res.json({
-                data: translatedFaqs,
-                metadata: {
-                    language: languageToUse,
-                    originalRequest: lang
-                }
+    try {
+        const { lang = 'en' } = req.query;
+        const faqs = await FAQ.find({ isActive: true });
+
+        const languageToUse = ['en', 'hi', 'bn','te','ta','sa','pa','mr','kn'].includes(lang) ? lang : 'en';
+
+        const translatedFaqs = faqs.map(faq => ({
+            _id: faq._id, // Changed from id to _id
+            question: faq.question[languageToUse],
+            answer: faq.answer[languageToUse],
+            createdAt: faq.createdAt,
+            updatedAt: faq.updatedAt
+        }));
+
+        res.json({
+            data: translatedFaqs,
+            metadata: {
+                language: languageToUse,
+                originalRequest: lang
+            }
+        });
+    } catch (error) {
+        console.error('Error fetching FAQs:', error);
+        res.status(500).json({ error: error.message });
+    }
+};
+
+   exports.deleteFAQ = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deletedFAQ = await FAQ.findByIdAndDelete(id);
+        
+        if (!deletedFAQ) {
+            return res.status(404).json({
+                success: false,
+                message: 'FAQ not found'
             });
-        } catch (error) {
-            console.error('Error fetching FAQs:', error);
-            res.status(500).json({ error: error.message });
         }
-    };
-    
-    
+
+        res.status(200).json({
+            success: true,
+            message: 'FAQ deleted successfully'
+        });
+    } catch (error) {
+        console.error('Delete FAQ error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error deleting FAQ'
+        });
+    }
+};
