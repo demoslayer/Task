@@ -1,6 +1,6 @@
-FAQ Management System
+# FAQ Management System
 A full-stack FAQ management application built with React, Node.js, MongoDB, and Redis.
-🚀 Quick Start
+# 🚀 Quick Start
 Prerequisites
 Node.js (v18 or higher)
 MongoDB
@@ -55,16 +55,14 @@ Express.js
 MongoDB
 Redis (optional)
 Mongoose
-📚 API Documentation
+# 📚 API Documentation
 FAQ Endpoints
 Method	Endpoint	Description
 GET	/api/faqs	Get all FAQs
 POST	/api/faqs	Create new FAQ
-🐳 Docker Deployment
-bash
-
-
-# Build and run with Docker Compose
+# 🐳 Docker Deployment
+## bash
+ Build and run with Docker Compose
 docker-compose up --build
 🔧 Environment Variables
 Frontend (.env)
@@ -78,10 +76,10 @@ env
 
 MONGODB_URI=your_mongodb_connection_string
 PORT=8000
-🏗️ Project Structure
+# 🏗️ Project Structure
 javascript
 
-
+#
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
@@ -100,7 +98,8 @@ javascript
 │   └── package.json
 │
 └── docker-compose.yml
-⚡ Features
+#
+# ⚡ Features
 Create and manage FAQs
 Real-time form validation
 Material UI components
@@ -108,22 +107,20 @@ Loading states
 Error handling
 CORS enabled
 Docker support
-🔒 Security
+# 🔒 Security
 CORS configuration
 Input validation
 Error handling
 Rate limiting (optional)
-🤝 Contributing
+# 🤝 Contributing
 Fork the repository
 Create your feature branch (git checkout -b feature/AmazingFeature)
 Commit your changes (git commit -m 'Add some AmazingFeature')
 Push to the branch (git push origin feature/AmazingFeature)
 Open a Pull Request
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-👥 Authors
-Your Name - Initial work - YourGithub
-🙏 Acknowledgments
+# 👥 Authors
+Byas Yadav
+# 🙏 Acknowledgments
 Material UI for the component library
 MongoDB Atlas for database hosting
 Vercel for deployment
