@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Box, CircularProgress } from '@mui/material';
 
 const headingTranslations = {
-  en: 'Frequently Asked Questions',
+  en: 'Frequently Asked Questions!',
   hi: 'अक्सर पूछे जाने वाले प्रश्न',
   bn: 'সচরাচর জিজ্ঞাসা করা প্রশ্নগুলি',
   te: 'తరచుగా అడిగే ప్రశ్నలు',
@@ -17,7 +17,7 @@ const TranslatableHeading = ({ language }) => {
 
   useEffect(() => {
     setLoading(true);
-    // Simulate translation loading time
+    
     setTimeout(() => {
       setHeading(headingTranslations[language] || headingTranslations.en);
       setLoading(false);

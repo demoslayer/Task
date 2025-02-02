@@ -1,6 +1,4 @@
 
-
-
 const FAQ = require('../models/faqModel');
 const translationService = require('../utils/translateService');
 
@@ -8,9 +6,9 @@ exports.createFAQ = async (req, res) => {
     try {
         const { question, answer } = req.body;
 
-        // Sanitize HTML content if needed
+        
         const sanitizeHtml = (html) => {
-            // Add your HTML sanitization logic here
+          
             return html;
         };
 
