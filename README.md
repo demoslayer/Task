@@ -57,82 +57,76 @@ Redis (optional)
 Mongoose
 # 📚 API Documentation
 FAQ Endpoints
+
 Method	Endpoint	Description
+
 GET	/api/faqs	Get all FAQs
+
 POST	/api/faqs	Create new FAQ
+
 # 🐳 Docker Deployment
 ## bash
- Build and run with Docker Compose
-docker-compose up --build
+ # Build and run with Docker Compose
+ docker-compose up --build
+
 🔧 Environment Variables
+
 Frontend (.env)
+
 env
 
 
 REACT_APP_API_URL=http://localhost:8000
+
 Backend (.env)
+
 env
 
 
 MONGODB_URI=your_mongodb_connection_string
+
 PORT=8000
+
 # 🏗️ Project Structure
 javascript
 
 #
 ├── frontend/
 
-
 │   ├── src/
-
 
 │   │   ├── components/
 
-
 │   │   │   └── FAQForm.js
-
 
 │   │   └── App.js
 
-
 │   ├── Dockerfile
-
 
 │   └── package.json
 
-
 │
-
 
 ├── backend/
 
-
 │   ├── routes/
-
 
 │   │   └── faqRoutes.js
 
-
 │   ├── models/
-
 
 │   │   └── FAQ.js
 
-
 │   ├── app.js
-
 
 │   ├── Dockerfile
 
-
 │   └── package.json
-
 
 │
 
-
 └── docker-compose.yml
-
+#
 
 # ⚡ Features
 Create and manage FAQs
